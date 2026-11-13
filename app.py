@@ -107,7 +107,7 @@ if query:
             total_score = text_match + visual_score
             results.append((total_score, text_match > 0, item))
             
-        results.sort(reverse=True, key=lambda x: x)
+        results.sort(reverse=True, key=lambda x: x[0])
         
         cols = st.columns(3)
         for idx, (score, is_text_match, item) in enumerate(results[:top_k]):
